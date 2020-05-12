@@ -2,9 +2,13 @@
 const express = require('express')
 // Passport docs: http://www.passportjs.org/docs/
 const passport = require('passport')
-
 // pull in Mongoose model for photos
 const Photo = require('../models/photo')
+
+// for rest request to unsplash
+const axios = require('axios').default
+// for access key of unsplash
+require('dotenv').config()
 
 // this is a collection of methods that help us detect situations when we need
 // to throw a custom error
@@ -110,6 +114,36 @@ router.delete('/photos/:id', requireToken, (req, res, next) => {
     .then(() => res.sendStatus(204))
     // if an error occurs, pass it to the handler
     .catch(next)
+})
+
+// GET ~ random photos
+router.get('/random', (req, res) => {
+  axios({
+    url: `https://api.unsplash.com/photos/random?count=7&client_id=${process.env.CLIENT_ID}`,
+    method: 'GET'
+  })
+    .then(photo => {
+      // console.log(photo)
+      res.status(201).send({ photos: photo.data })
+    })
+    .catch(err => {
+      res.send({ err })
+    })
+})
+
+// GET ~ search photos by keyword
+router.get('/search', (req, res) => {
+  axios({
+    url: `https://api.unsplash.com/search/photos?page=1&query=${req.query.query}&client_id=${process.env.CLIENT_ID}`,
+    method: 'GET'
+  })
+    .then(photo => {
+      // console.log(photo)
+      res.status(201).send({ photos: photo.data })
+    })
+    .catch(err => {
+      res.send({ err })
+    })
 })
 
 module.exports = router
