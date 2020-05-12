@@ -119,7 +119,7 @@ router.delete('/photos/:id', requireToken, (req, res, next) => {
 // GET ~ random photos
 router.get('/random', (req, res) => {
   axios({
-    url: `https://api.unsplash.com/photos/random?count=7&client_id=${process.env.CLIENT_ID}`,
+    url: `https://api.unsplash.com/photos/random?count=1&client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
@@ -135,7 +135,7 @@ router.get('/random', (req, res) => {
 router.get('/search', (req, res) => {
   console.log(req)
   axios({
-    url: `https://api.unsplash.com/search/photos?page=1&query=${req.query.query}&client_id=${process.env.CLIENT_ID}`,
+    url: `https://api.unsplash.com/search/photos?page=1&query=${req.query.keyword}&client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
