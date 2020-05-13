@@ -5,11 +5,23 @@ const photoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  photoId: {
+    type: String,
+    required: true
+  },
   photographer: {
     type: String,
     required: true
   },
+  portfolio: {
+    type: String,
+    required: true
+  },
   title: {
+    type: String,
+    required: true
+  },
+  rating: {
     type: String,
     required: true
   },
