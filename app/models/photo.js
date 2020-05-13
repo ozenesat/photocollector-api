@@ -26,8 +26,7 @@ const photoSchema = new mongoose.Schema({
     required: true
   },
   comment: {
-    type: String,
-    required: true
+    type: String
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
