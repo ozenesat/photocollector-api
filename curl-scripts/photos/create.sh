@@ -11,9 +11,12 @@ curl "${API}${URL_PATH}" \
   --data '{
     "photo": {
       "photoUrl": "'"${PHOTOURL}"'",
+      "photoId": "'"${PHOTOID}"'",
       "photographer": "'"${PHOTOGRAPHER}"'",
+      "portfolio": "'"${PORTFOLIO}"'",
       "title": "'"${TITLE}"'",
-      "comment": "'"${COMMENT}"'"
+      "comment": "'"${COMMENT}"'",
+      "rating": "'"${RATING}"'"
     }
   }'
 
