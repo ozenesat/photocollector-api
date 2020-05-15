@@ -131,6 +131,21 @@ router.get('/random', (req, res) => {
     })
 })
 
+// GET ~ random photos for home
+router.get('/random-home', (req, res) => {
+  axios({
+    url: `https://api.unsplash.com/photos/random?count=3&client_id=${process.env.CLIENT_ID}`,
+    method: 'GET'
+  })
+    .then(photo => {
+      // console.log(photo)
+      res.status(201).send({ photos: photo.data })
+    })
+    .catch(err => {
+      res.send({ err })
+    })
+})
+
 // GET ~ search photos by keyword
 router.get('/search', (req, res) => {
   console.log(req)
