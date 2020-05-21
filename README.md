@@ -19,7 +19,7 @@ some spectacular photos and meet the talented people who took them!
 
 ## Related Links
 <ul>
-  <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/ozenesat/photocollector-api">API Repo</a></li>
+  <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/ozenesat/photo-collector-client">Client Repo</a></li>
   <li><a target="_blank" rel="noopener noreferrer" href="https://mysterious-escarpment-32571.herokuapp.com">Deployed API</a></li>
   <li><a target="_blank" rel="noopener noreferrer" href="https://ozenesat.github.io/photo-collector-client/">Deployed Client</a></li>
 </ul>
@@ -42,7 +42,7 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 ## Routes ~ API Documentation
 
-<a target="_blank" rel="noopener noreferrer" href="./Routes">API Repo</a>
+<a target="./Routes.md" href="./Routes.md">API Repo</a>
 
 -----------------------
 
@@ -77,7 +77,7 @@ use `npm` anyway. These are the commands available:
 
 -----------------------
 
-## Technologies Used @ Photo Collector
+## Technologies Used @ Photo Collector's Back-End
 <ul>
   <li>Node.js</li>
   <li>Express</li>
