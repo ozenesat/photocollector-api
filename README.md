@@ -6,16 +6,18 @@ some spectacular photos and meet the talented people who took them!
 
 -----------------------
 
-# Setup Steps
+## Setup Steps
 <ul>
  <li> Fork and clone this repository.</li>
  <li> Run npm install to install all dependencies to install all dependencies.</li>
+ <li>Ensure that you have nodemon installed by running npm install -g nodemon.</li>
+ <li>Ensure the API is functioning properly by running npm run server.</li>
  <li> Use npm run start to spin up the server.</li>
 </ul>
 
 -----------------------
 
-# Related Links
+## Related Links
 <ul>
   <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/ozenesat/photocollector-api">API Repo</a></li>
   <li><a target="_blank" rel="noopener noreferrer" href="https://mysterious-escarpment-32571.herokuapp.com">Deployed API</a></li>
@@ -24,7 +26,7 @@ some spectacular photos and meet the talented people who took them!
 
 -----------------------
 
-# Developing Proccess
+## Developing Proccess
 
 I started to work on this project with field research. In my capstone project I would like to develop a website that has a real user experience where user can spend couple hours easily. So I need some third party API's to achive this goal. And I searched for free APIs. After 2 days of field search I decided to go with Unsplash. As a former journo, I always find photos attractive and I can spend a few hours easily when I am discovering new photos. Then I started to read <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/documentation"> the documention of Unsplash.</a>
 
@@ -38,13 +40,27 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 -----------------------
 
-# Routes ~ API Documentation
+## Routes ~ API Documentation
 
 <a target="_blank" rel="noopener noreferrer" href="./Routes">API Repo</a>
 
 -----------------------
 
-# User Stories
+## Tasks
+
+Instead of `grunt`, this template uses `npm` as a task runner. This is more
+conventional for modern Express apps, and it's handy because we'll definitely
+use `npm` anyway. These are the commands available:
+
+| Command                | Effect                                                                                                      |
+|------------------------|-------------------------------------------------------------------------------------------------------------|
+| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
+| `npm test`             | Runs automated tests.                                                                                       |
+| `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
+
+-----------------------
+
+## User Stories
 <ul>
   <li> As an unregistered user, I can see random photos.</li>
   <li> As a user, I want to sign in and sign up.</li>
@@ -61,7 +77,7 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 -----------------------
 
-# Technologies Used @ Photo Collector
+## Technologies Used @ Photo Collector
 <ul>
   <li>Node.js</li>
   <li>Express</li>
@@ -72,7 +88,7 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 -----------------------
 
-# Unsolved Problems ~ Designed Updates of Photo Collector
+## Unsolved Problems ~ Designed Updates of Photo Collector
 <ul>
   <li> Better search experience, more random, mixed results.</li>
   <li> Design for home pages should be imporoved.</li>
@@ -84,5 +100,5 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 -----------------------
 
-# ERD of Photo Collector
+## ERD of Photo Collector
 ![autodraw 5_11_2020](https://media.git.generalassemb.ly/user/26372/files/94c75b00-936e-11ea-9271-e96497c86b7e)
