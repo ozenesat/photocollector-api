@@ -34,12 +34,15 @@ const router = express.Router()
 // INDEX
 // GET /photos
 router.get('/photos', requireToken, (req, res, next) => {
-  Photo.find()
+  Photo.find({ owner: req.user.id })
     .then(photos => {
       // `photos` will be an array of Mongoose documents
       // we want to convert each one to a POJO, so we use `.map` to
       // apply `.toObject` to each one
-      return photos.map(photo => photo.toObject())
+      return photos.map(photo => {
+        // photo.editable = photo.owner === req.user.id
+        return photo.toObject()
+      })
     })
     // respond with status 200 and JSON of the photos
     .then(photos => res.status(200).json({ photos: photos }))
