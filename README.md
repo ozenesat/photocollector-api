@@ -1,12 +1,14 @@
 # Photo Collector
+
 Photo Collector is a website application where you can view many beautiful photos and
 create your own photo collection with them. You can rate and comment on the photos in your collection while you
 can always edit or delete the items anytime you want. Come discover this website if you want to see
 some spectacular photos and meet the talented people who took them!
 
------------------------
+* * *
 
 ## Setup Steps
+
 <ul>
  <li> Fork and clone this repository.</li>
  <li> Run npm install to install all dependencies to install all dependencies.</li>
@@ -15,16 +17,17 @@ some spectacular photos and meet the talented people who took them!
  <li> Use npm run start to spin up the server.</li>
 </ul>
 
------------------------
+* * *
 
 ## Related Links
+
 <ul>
   <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/ozenesat/photo-collector-client">Client Repo</a></li>
   <li><a target="_blank" rel="noopener noreferrer" href="https://mysterious-escarpment-32571.herokuapp.com">Deployed API</a></li>
   <li><a target="_blank" rel="noopener noreferrer" href="https://ozenesat.github.io/photo-collector-client/">Deployed Client</a></li>
 </ul>
 
------------------------
+* * *
 
 ## Developing Proccess
 
@@ -38,26 +41,28 @@ As second step I started to work on the front end. I implemented basic buttons a
 
 Lastly, I tested all functionalities and fixed the errors and bugs. Then I designed all components and the main page with navbar. As final touch, I developed a welcome and home pages for unsigned-in users.
 
------------------------
+* * *
 
 ## Routes ~ API Documentation
 
-| Verb   | URI Pattern  | Explanation |
-|:-------|:-------------|:------------------|
-| GET    | `/photos`     | Gets signed-in user's photo collection   |
-| GET    | `/photos/:id` | Get's the photo with `id` and user's comment and rating for that photo      |
-| POST   | `/photos`     | Posts a new photo into user photo collection with user's comment and rating    |
-| PATCH  | `/photos/:id` | Update the user's rating and commment of the photo with `id`    |
-| DELETE | `/photos/:id` | Delete the photo with `id` from user's photo collection   |
-| GET   |  `random` |   Gets one random photo from Unsplash for search photo page |
-| GET   | `random-home`   | Gets three random photos from Unsplash for home page  |
-| GET   | `search`  | Gets photo search results with keyword from Unsplash  |
-| GET   | `collection`  | Gets random photo collection from Unsplash   |
-| GET   | `collections`  | Gets photo collections with keyword from Unsplash |
-| GET   | `/collection-photos`  | Gets the photos of the collection with collection `id`   |
-| GET   | `collection-related`  | Gets the related photo collections of the collection with `id`   |
+| Verb   | URI Pattern           | Explanation                                                                    |
+| :----- | :-------------------- | :----------------------------------------------------------------------------- |
+| GET    | `/photos`             | Gets signed-in user's photo collection                                         |
+| GET    | `/photos/:id`         | Get's the photo with `id` and user's comment and rating for that photo         |
+| POST   | `/photos`             | Posts a new photo into user photo collection with user's comment and rating    |
+| PATCH  | `/photos/:id`         | Update the user's rating and commment of the photo with `id`                   |
+| DELETE | `/photos/:id`         | Delete the photo with `id` from user's photo collection                        |
+| GET    | `/random`             | Gets one random photo from Unsplash\* for search photo page                    |
+| GET    | `/random-home`        | Gets three random photos from Unsplash\* for home page                         |
+| GET    | `/search`             | Gets photo search results with keyword from Unsplash\*                         |
+| GET    | `/collection`         | Gets random photo collection from Unsplash\*                                   |
+| GET    | `/collections`        | Gets photo collections with keyword from Unsplash\*                            |
+| GET    | `/collection-photos`  | Gets the photos of the collection with collection `id` from Unsplash\*         |
+| GET    | `/collection-related` | Gets the related photo collections of the collection with `id` from Unsplash\* |
 
------------------------
+-   See <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/documentation"> the documention of Unsplash</a> for sh key.
+
+* * *
 
 ## Tasks
 
@@ -66,14 +71,15 @@ conventional for modern Express apps, and it's handy because we'll definitely
 use `npm` anyway. These are the commands available:
 
 | Command                | Effect                                                                                                      |
-|------------------------|-------------------------------------------------------------------------------------------------------------|
-| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.          |
 | `npm test`             | Runs automated tests.                                                                                       |
 | `npm run debug-server` | Starts the server in debug mode, which will print lots of extra info about what's happening inside the app. |
 
------------------------
+* * *
 
 ## User Stories
+
 <ul>
   <li> As an unregistered user, I can see random photos.</li>
   <li> As a user, I want to sign in and sign up.</li>
@@ -88,9 +94,10 @@ use `npm` anyway. These are the commands available:
   <li> As a user, I want to spend time so I want to too many photos at the same page.</li>
 </ul>
 
------------------------
+* * *
 
 ## Technologies Used
+
 <ul>
   <li>Node.js</li>
   <li>Express</li>
@@ -99,9 +106,10 @@ use `npm` anyway. These are the commands available:
   <li>Unsplash API</li>
 </ul>
 
------------------------
+* * *
 
 ## Unsolved Problems ~ Designed Updates
+
 <ul>
   <li> Better search experience, more random, mixed results.</li>
   <li> Design for home pages should be imporoved.</li>
@@ -111,7 +119,8 @@ use `npm` anyway. These are the commands available:
   <li> Social media interactions functionalty.</li>
 </ul>
 
------------------------
+* * *
 
 ## ERD
+
 ![autodraw 5_11_2020](https://media.git.generalassemb.ly/user/26372/files/94c75b00-936e-11ea-9271-e96497c86b7e)
