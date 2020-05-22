@@ -42,13 +42,26 @@ Lastly, I tested all functionalities and fixed the errors and bugs. Then I desig
 
 ## Routes ~ API Documentation
 
-<a target="./Routes.md" href="./Routes.md">API Repo</a>
+| Verb   | URI Pattern  | Explanation |
+|:-------|:-------------|:------------------|
+| GET    | `/photos`     | Gets signed-in user's photo collection   |
+| GET    | `/photos/:id` | Get's the photo with `id` and user's comment and rating for that photo      |
+| POST   | `/photos`     | Posts a new photo into user photo collection with user's comment and rating    |
+| PATCH  | `/photos/:id` | Update the user's rating and commment of the photo with `id`    |
+| DELETE | `/photos/:id` | Delete the photo with `id` from user's photo collection   |
+| GET   |  `random` |   Gets one random photo from Unsplash for search photo page |
+| GET   | `random-home`   | Gets three random photos from Unsplash for home page  |
+| GET   | `search`  | Gets photo search results with keyword from Unsplash  |
+| GET   | `collection`  | Gets random photo collection from Unsplash   |
+| GET   | `collections`  | Gets photo collections with keyword from Unsplash |
+| GET   | `/collection-photos`  | Gets the photos of the collection with collection `id`   |
+| GET   | `collection-related`  | Gets the related photo collections of the collection with `id`   |
 
 -----------------------
 
 ## Tasks
 
-Instead of `grunt`, this template uses `npm` as a task runner. This is more
+Instead of `grunt`, this app uses `npm` as a task runner. This is more
 conventional for modern Express apps, and it's handy because we'll definitely
 use `npm` anyway. These are the commands available:
 
@@ -77,7 +90,7 @@ use `npm` anyway. These are the commands available:
 
 -----------------------
 
-## Technologies Used @ Photo Collector's Back-End
+## Technologies Used
 <ul>
   <li>Node.js</li>
   <li>Express</li>
@@ -88,7 +101,7 @@ use `npm` anyway. These are the commands available:
 
 -----------------------
 
-## Unsolved Problems ~ Designed Updates of Photo Collector
+## Unsolved Problems ~ Designed Updates
 <ul>
   <li> Better search experience, more random, mixed results.</li>
   <li> Design for home pages should be imporoved.</li>
@@ -100,5 +113,5 @@ use `npm` anyway. These are the commands available:
 
 -----------------------
 
-## ERD of Photo Collector
+## ERD
 ![autodraw 5_11_2020](https://media.git.generalassemb.ly/user/26372/files/94c75b00-936e-11ea-9271-e96497c86b7e)
