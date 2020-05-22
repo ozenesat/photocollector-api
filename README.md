@@ -29,17 +29,17 @@ some spectacular photos and meet the talented people who took them!
 
 * * *
 
-## Developing Proccess
+## Developing Process
 
-I started to work on this project with field research. In my capstone project I would like to develop a website that has a real user experience where user can spend couple hours easily. So I need some third party API's to achive this goal. And I searched for free APIs. After 2 days of field search I decided to go with Unsplash. As a former journo, I always find photos attractive and I can spend a few hours easily when I am discovering new photos. Then I started to read <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/documentation"> the documention of Unsplash.</a>
+I started to work on this project with field research. In my capstone project I wanted to develop a website that has a real user experience where the user can spend couple of hours easily. So I needed some third party API's to achive this goal. And I searched for free APIs. After 2 days of field research I decided to go with Unsplash. As a former journo, I always find photos intriguing and I can spend a few hours easily when I am discovering new photos. Then I started to read <a target="_blank" rel="noopener noreferrer" href="https://unsplash.com/documentation"> the documention of Unsplash.</a>
 
-After this long searches and reading I jumped into developing proccess. For smooth and uninterrupted user experince I decided to use React for Front-end and since I am not full sure about the data part of my project I preferred Node.Js with Express for back-end by the side of MangoDB.
+After this long searches and reading I jumped into developing proccess. For smooth and uninterrupted user experince I decided to use React for Front-end and since I am not fully sure about the data part of my project I preferred Node.Js with Express for back-end by the side of MangoDB.
 
-Firstly, I created my developer account on Unsplash and get sh key. Since it's my first time using third party api with sh key, getting datas successfully and implementing it into my application takes a little time to figured it out. Then I developed all back-end routes, models and schema. I tested Unsplash related ones with Postman and the others with curl sciripts.
+Firstly, I created my developer account on Unsplash and got sh key. Since it's my first time using third party api with sh key, getting data successfully and implementing it into my application took a little time to figure out. Then I developed all back-end routes, models and schema. I tested Unsplash related ones with Postman and the others with curl scripts.
 
-As second step I started to work on the front end. I implemented basic buttons and forms for user actions with Bootstrap. Then I added 'photo search and collect' related functionalities using React components. To finalize all components that are working fully functional takes couple days.
+As the second step I started to work on the front end. I implemented basic buttons and forms for user actions with Bootstrap. Then I added 'photo search and collect' related functionalities using React components. To have all components working fully functional took couple of days.
 
-Lastly, I tested all functionalities and fixed the errors and bugs. Then I designed all components and the main page with navbar. As final touch, I developed a welcome and home pages for unsigned-in users.
+Lastly, I tested all functionalities and fixed the errors and bugs. Then I designed all components and the main page with navbar. As a final touch, I developed welcome and home pages for unregistered users.
 
 * * *
 
