@@ -141,7 +141,6 @@ router.get('/random-home', (req, res) => {
     method: 'GET'
   })
     .then(photo => {
-      // console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
@@ -151,13 +150,11 @@ router.get('/random-home', (req, res) => {
 
 // GET ~ search photos by keyword
 router.get('/search', (req, res) => {
-  console.log(req)
   axios({
     url: `https://api.unsplash.com/search/photos?page=1&query=${req.query.keyword}&client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
-      console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
@@ -167,13 +164,11 @@ router.get('/search', (req, res) => {
 
 // Get a random collection
 router.get('/collection', (req, res) => {
-  console.log(req)
   axios({
     url: `https://api.unsplash.com/collections/featured?page=1&client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
-      console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
@@ -183,13 +178,11 @@ router.get('/collection', (req, res) => {
 
 // Get collections with a keyword
 router.get('/collections', (req, res) => {
-  console.log(req)
   axios({
     url: `https://api.unsplash.com/search/collections?page=1&query=${req.query.keyword}&client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
-      console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
@@ -199,13 +192,11 @@ router.get('/collections', (req, res) => {
 
 // GET /collections/:id/photos
 router.get('/collection-photos', (req, res) => {
-  console.log(req)
   axios({
     url: `https://api.unsplash.com/collections/${req.query.collectionId}/photos?client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
-      console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
@@ -214,19 +205,17 @@ router.get('/collection-photos', (req, res) => {
 })
 
 // GET /collections/:id/related
-
 router.get('/collection-related', (req, res) => {
-  console.log(req)
   axios({
     url: `https://api.unsplash.com/collections/${req.query.collectionId}/related?client_id=${process.env.CLIENT_ID}`,
     method: 'GET'
   })
     .then(photo => {
-      console.log(photo)
       res.status(201).send({ photos: photo.data })
     })
     .catch(err => {
       res.send({ err })
     })
 })
+
 module.exports = router
