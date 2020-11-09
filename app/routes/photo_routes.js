@@ -36,7 +36,7 @@ const router = express.Router()
 router.get('/photos', requireToken, (req, res, next) => {
   Photo.find({ owner: req.user.id })
     .then(photos => {
-      // `photos` will be an array of Mongoose documents
+      // `photos` will be an array of Mongoose documentshttps://api.unsplash.com/collections/${req.query.collectionId}/related?client_id=${process.env.CLIENT_ID}`
       // we want to convert each one to a POJO, so we use `.map` to
       // apply `.toObject` to each one
       return photos.map(photo => {
@@ -206,6 +206,7 @@ router.get('/collection-photos', (req, res) => {
 
 // GET /collections/:id/related
 router.get('/collection-related', (req, res) => {
+  console.log(req, 'req')
   axios({
     url: `https://api.unsplash.com/collections/${req.query.collectionId}/related?client_id=${process.env.CLIENT_ID}`,
     method: 'GET'

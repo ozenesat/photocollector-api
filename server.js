@@ -21,6 +21,40 @@ const db = require('./config/db')
 // require configured passport authentication middleware
 const auth = require('./lib/auth')
 
+// instantiate express application object
+const app = express()
+
+// Google Login
+const cookieSession = require('cookie-session')
+app.use(cookieSession({
+  name: 'tuto-session',
+  keys: ['key1', 'key2']
+}))
+// Passport docs: http://www.passportjs.org/docs/
+const passport = require('passport')
+
+// Google login route files
+const isLoggedIn = (req, res, next) => {
+  if (req.user) {
+    next()
+  } else {
+    res.sendStatus(401)
+  }
+}
+app.get('/failed', (req, res) => res.send('Failed login attempt'))
+app.get('/success', isLoggedIn, (req, res) => res.send(`Welcome ${req.user.email}`))
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.get('/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] }))
+app.get('/google/callback',
+  passport.authenticate('google', { failureRedirect: '/failed' }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/success')
+  })
+
 // define server and client ports
 // used for cors and local port declaration
 const serverDevPort = 4741
@@ -33,9 +67,6 @@ mongoose.connect(db, {
   useNewUrlParser: true,
   useCreateIndex: true
 })
-
-// instantiate express application object
-const app = express()
 
 // set CORS headers on response from this API using the `cors` NPM package
 // `CLIENT_ORIGIN` is an environment variable that will be set on Heroku

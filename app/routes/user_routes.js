@@ -3,6 +3,7 @@ const express = require('express')
 const crypto = require('crypto')
 // Passport docs: http://www.passportjs.org/docs/
 const passport = require('passport')
+
 // bcrypt docs: https://github.com/kelektiv/node.bcrypt.js
 const bcrypt = require('bcrypt')
 
@@ -24,6 +25,37 @@ const requireToken = passport.authenticate('bearer', { session: false })
 
 // instantiate a router (mini app that only handles routes)
 const router = express.Router()
+
+// Google login package
+var GoogleStrategy = require('passport-google-oauth20').Strategy
+// const app = express()
+// const cookieSession = require('cookie-session')
+// app.use(cookieSession({
+//   name: 'tuto-session',
+//   keys: ['key1', 'key2']
+// }))
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id)
+})
+
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user)
+  })
+})
+
+passport.use(new GoogleStrategy({
+  clientID: '298833457462-vdgqqdgkfahbengirfhpsb61vjeohouu.apps.googleusercontent.com',
+  clientSecret: '3XEUHVsF_pirluY_r9DPpVfW',
+  callbackURL: 'http://localhost:7165/google/callback'
+},
+function (accessToken, refreshToken, profile, done) {
+  User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    return done(err, user)
+  })
+}
+))
 
 // SIGN UP
 // POST /sign-up
